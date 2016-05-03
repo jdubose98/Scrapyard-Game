@@ -1,0 +1,173 @@
+fileFormatVersion: 2
+guid: e2682eb1484b1ca4bbdd798348a0802e
+timeCreated: 1462281855
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arena Entrance Line
+    100002: Arena Entrance Line 2
+    100004: Arena Frame
+    100006: Circle Support
+    100008: Circle Support 2
+    100010: Grassy Area
+    100012: Ground Support
+    100014: Middle of Platform 1
+    100016: Middle of Platform 2
+    100018: Platform 2
+    100020: Platform1
+    100022: PokeBall
+    100024: Pylon 3
+    100026: Pylon1
+    100028: Pylon2
+    100030: Pylon4
+    100032: Pylon6
+    100034: Pylon7
+    100036: Pylon8
+    100038: Pylon9
+    100040: //RootNode
+    400000: Arena Entrance Line
+    400002: Arena Entrance Line 2
+    400004: Arena Frame
+    400006: Circle Support
+    400008: Circle Support 2
+    400010: Grassy Area
+    400012: Ground Support
+    400014: Middle of Platform 1
+    400016: Middle of Platform 2
+    400018: Platform 2
+    400020: Platform1
+    400022: PokeBall
+    400024: Pylon 3
+    400026: Pylon1
+    400028: Pylon2
+    400030: Pylon4
+    400032: Pylon6
+    400034: Pylon7
+    400036: Pylon8
+    400038: Pylon9
+    400040: //RootNode
+    2300000: Arena Entrance Line
+    2300002: Arena Entrance Line 2
+    2300004: Arena Frame
+    2300006: Circle Support
+    2300008: Circle Support 2
+    2300010: Grassy Area
+    2300012: Ground Support
+    2300014: Middle of Platform 1
+    2300016: Middle of Platform 2
+    2300018: Platform 2
+    2300020: Platform1
+    2300022: PokeBall
+    2300024: Pylon 3
+    2300026: Pylon1
+    2300028: Pylon2
+    2300030: Pylon4
+    2300032: Pylon6
+    2300034: Pylon7
+    2300036: Pylon8
+    2300038: Pylon9
+    3300000: Arena Entrance Line
+    3300002: Arena Entrance Line 2
+    3300004: Arena Frame
+    3300006: Circle Support
+    3300008: Circle Support 2
+    3300010: Grassy Area
+    3300012: Ground Support
+    3300014: Middle of Platform 1
+    3300016: Middle of Platform 2
+    3300018: Platform 2
+    3300020: Platform1
+    3300022: PokeBall
+    3300024: Pylon 3
+    3300026: Pylon1
+    3300028: Pylon2
+    3300030: Pylon4
+    3300032: Pylon6
+    3300034: Pylon7
+    3300036: Pylon8
+    3300038: Pylon9
+    4300000: Arena Frame
+    4300002: PokeBall
+    4300004: Grassy Area
+    4300006: Pylon1
+    4300008: Pylon2
+    4300010: Pylon 3
+    4300012: Pylon4
+    4300014: Pylon6
+    4300016: Pylon7
+    4300018: Pylon8
+    4300020: Pylon9
+    4300022: Ground Support
+    4300024: Platform1
+    4300026: Platform 2
+    4300028: Circle Support 2
+    4300030: Circle Support
+    4300032: Middle of Platform 2
+    4300034: Middle of Platform 1
+    4300036: Arena Entrance Line
+    4300038: Arena Entrance Line 2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
