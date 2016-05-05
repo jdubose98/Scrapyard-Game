@@ -1,0 +1,284 @@
+fileFormatVersion: 2
+guid: 7cf22eaedb58f0a408e6abd2e7637349
+timeCreated: 1462365309
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Antenna Socket
+    100002: Antenna01
+    100004: Antenna02
+    100006: Arm Armor002
+    100008: Arm Armor01
+    100010: Arm sockets
+    100012: Bolt01
+    100014: Bolt02
+    100016: Bolt03
+    100018: Bolt04
+    100020: Bolt05
+    100022: Bolt06
+    100024: Co2 Tank
+    100026: Co2 Tube
+    100028: Eye
+    100030: Eye rim01
+    100032: Eye rim02
+    100034: Eye02
+    100036: Foot Armor002
+    100038: Foot Armor01
+    100040: Inner Body
+    100042: Left Arm
+    100044: Left arm connector
+    100046: Left claw
+    100048: Left foot
+    100050: Left Leg
+    100052: Left leg connector
+    100054: Leg sockets
+    100056: Legs armor002
+    100058: Legs armor01
+    100060: Maine Character Head
+    100062: Mine Launcher
+    100064: Mouth
+    100066: Neck connector
+    100068: Neck Socket
+    100070: Outer Body
+    100072: Righ Arm
+    100074: Right arm connector
+    100076: Right claw
+    100078: Right foot
+    100080: Right Leg
+    100082: Right leg connector
+    100084: //RootNode
+    400000: Antenna Socket
+    400002: Antenna01
+    400004: Antenna02
+    400006: Arm Armor002
+    400008: Arm Armor01
+    400010: Arm sockets
+    400012: Bolt01
+    400014: Bolt02
+    400016: Bolt03
+    400018: Bolt04
+    400020: Bolt05
+    400022: Bolt06
+    400024: Co2 Tank
+    400026: Co2 Tube
+    400028: Eye
+    400030: Eye rim01
+    400032: Eye rim02
+    400034: Eye02
+    400036: Foot Armor002
+    400038: Foot Armor01
+    400040: Inner Body
+    400042: Left Arm
+    400044: Left arm connector
+    400046: Left claw
+    400048: Left foot
+    400050: Left Leg
+    400052: Left leg connector
+    400054: Leg sockets
+    400056: Legs armor002
+    400058: Legs armor01
+    400060: Maine Character Head
+    400062: Mine Launcher
+    400064: Mouth
+    400066: Neck connector
+    400068: Neck Socket
+    400070: Outer Body
+    400072: Righ Arm
+    400074: Right arm connector
+    400076: Right claw
+    400078: Right foot
+    400080: Right Leg
+    400082: Right leg connector
+    400084: //RootNode
+    2300000: Antenna Socket
+    2300002: Antenna01
+    2300004: Antenna02
+    2300006: Arm Armor002
+    2300008: Arm Armor01
+    2300010: Arm sockets
+    2300012: Bolt01
+    2300014: Bolt02
+    2300016: Bolt03
+    2300018: Bolt04
+    2300020: Bolt05
+    2300022: Bolt06
+    2300024: Co2 Tank
+    2300026: Co2 Tube
+    2300028: Eye
+    2300030: Eye rim01
+    2300032: Eye rim02
+    2300034: Eye02
+    2300036: Foot Armor002
+    2300038: Foot Armor01
+    2300040: Inner Body
+    2300042: Left Arm
+    2300044: Left arm connector
+    2300046: Left claw
+    2300048: Left foot
+    2300050: Left Leg
+    2300052: Left leg connector
+    2300054: Leg sockets
+    2300056: Legs armor002
+    2300058: Legs armor01
+    2300060: Maine Character Head
+    2300062: Mine Launcher
+    2300064: Mouth
+    2300066: Neck connector
+    2300068: Neck Socket
+    2300070: Outer Body
+    2300072: Righ Arm
+    2300074: Right arm connector
+    2300076: Right claw
+    2300078: Right foot
+    2300080: Right Leg
+    2300082: Right leg connector
+    3300000: Antenna Socket
+    3300002: Antenna01
+    3300004: Antenna02
+    3300006: Arm Armor002
+    3300008: Arm Armor01
+    3300010: Arm sockets
+    3300012: Bolt01
+    3300014: Bolt02
+    3300016: Bolt03
+    3300018: Bolt04
+    3300020: Bolt05
+    3300022: Bolt06
+    3300024: Co2 Tank
+    3300026: Co2 Tube
+    3300028: Eye
+    3300030: Eye rim01
+    3300032: Eye rim02
+    3300034: Eye02
+    3300036: Foot Armor002
+    3300038: Foot Armor01
+    3300040: Inner Body
+    3300042: Left Arm
+    3300044: Left arm connector
+    3300046: Left claw
+    3300048: Left foot
+    3300050: Left Leg
+    3300052: Left leg connector
+    3300054: Leg sockets
+    3300056: Legs armor002
+    3300058: Legs armor01
+    3300060: Maine Character Head
+    3300062: Mine Launcher
+    3300064: Mouth
+    3300066: Neck connector
+    3300068: Neck Socket
+    3300070: Outer Body
+    3300072: Righ Arm
+    3300074: Right arm connector
+    3300076: Right claw
+    3300078: Right foot
+    3300080: Right Leg
+    3300082: Right leg connector
+    4300000: Outer Body
+    4300002: Inner Body
+    4300004: Arm sockets
+    4300006: Neck Socket
+    4300008: Leg sockets
+    4300010: Maine Character Head
+    4300012: Eye rim01
+    4300014: Eye
+    4300016: Eye02
+    4300018: Eye rim02
+    4300020: Mouth
+    4300022: Antenna Socket
+    4300024: Antenna01
+    4300026: Antenna02
+    4300028: Neck connector
+    4300030: Bolt02
+    4300032: Bolt01
+    4300034: Left arm connector
+    4300036: Right arm connector
+    4300038: Righ Arm
+    4300040: Arm Armor01
+    4300042: Left Arm
+    4300044: Arm Armor002
+    4300046: Mine Launcher
+    4300048: Co2 Tank
+    4300050: Co2 Tube
+    4300052: Right claw
+    4300054: Left claw
+    4300056: Left leg connector
+    4300058: Right leg connector
+    4300060: Right Leg
+    4300062: Legs armor01
+    4300064: Left Leg
+    4300066: Legs armor002
+    4300068: Right foot
+    4300070: Foot Armor01
+    4300072: Foot Armor002
+    4300074: Left foot
+    4300076: Bolt03
+    4300078: Bolt04
+    4300080: Bolt05
+    4300082: Bolt06
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

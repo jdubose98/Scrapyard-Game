@@ -6,7 +6,9 @@ public class WorkshopCamRotate : MonoBehaviour {
     [SerializeField] float SpinSpeed = -20;
 
     [SerializeField] bool CanSpin = true;
-	
+
+    [SerializeField] GameObject ObjectToFocusOn;
+
 	// Update is called once per frame
 	void FixedUpdate () {
 
