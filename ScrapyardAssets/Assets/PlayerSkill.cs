@@ -50,6 +50,7 @@ public class PlayerSkill : MonoBehaviour {
 
 		if (enemy.healthBar.fillAmount == 1) 
 		{
+			CancelInvoke ();
 			enemy.Die ();
 		}
 	}
@@ -59,13 +60,35 @@ public class PlayerSkill : MonoBehaviour {
 		enemy.TakeDamage (m_Attack * mult);
 	}
 
+	public void Attack()
+	{
+		enemy.TakeDamage (1.0f);
+	}
+
+	public void Burn()
+	{
+		if (enemy.healthBar.fillAmount < 0.5f) 
+		{
+			InvokeRepeating ("Attack", 1.0f, 2.0f);
+		}
+	}
+
+	public void Stun()
+	{
+		StartCoroutine (Freeze (enemy.charge));
+	}
+
 	public void TakeDamage (float damage)
 	{
 		healthBar.fillAmount += ((damage - m_Defense) * (1/m_Health));
 	}
 
-//	IEnumerator Charge (float time)
-//	{
-//		
-//	}
+	IEnumerator Freeze (bool which)
+	{
+		Debug.Log ("frozen");
+		which = false;
+		yield return new WaitForSeconds (2);
+		which = false;
+		Debug.Log ("Unfrozen");
+	}
 }

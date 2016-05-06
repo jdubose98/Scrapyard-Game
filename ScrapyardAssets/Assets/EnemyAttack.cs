@@ -12,10 +12,12 @@ public class EnemyAttack : MonoBehaviour {
 	[SerializeField] float m_Health;
 
 	int burn;
-	Image chargeBar;
+	public Image chargeBar;
+	Text pain;
 	public Image healthBar;
 	PlayerSkill player;
 	ParticleSystem hurt;
+	public bool charge = true;
 
 	public Canvas screen;
 
@@ -29,7 +31,7 @@ public class EnemyAttack : MonoBehaviour {
 		hurt = GetComponent<ParticleSystem> ();
 		screen = GameObject.Find ("Canvas").GetComponent<Canvas>();
 		screen.enabled = false;
-
+		pain = GameObject.Find ("Pain").GetComponent<Text> ();
 		// InvokeRepeating ("Attack", m_Speed, 1.0f);
 	}
 
@@ -45,8 +47,10 @@ public class EnemyAttack : MonoBehaviour {
 	{
 		if (screen.enabled && healthBar.fillAmount < 1) 
 		{
-			chargeBar.fillAmount += Mathf.Lerp (0, 1, m_Speed * Time.fixedDeltaTime);
-
+			if (charge) 
+			{
+				chargeBar.fillAmount += Mathf.Lerp (0, 1, m_Speed * Time.fixedDeltaTime);
+			}
 			if (chargeBar.fillAmount == 1) 
 			{
 				Attack ();
@@ -63,16 +67,25 @@ public class EnemyAttack : MonoBehaviour {
 	public void TakeDamage (float damage)
 	{
 		healthBar.fillAmount += ((damage - m_Defense) * (1/m_Health));
-		hurt.maxParticles = (int) damage;
-		hurt.Play ();
+		pain.text = "- " + (damage - m_Defense);
+		StartCoroutine (DamageToScreen ());
+//		hurt.maxParticles = (int) damage;
+//		hurt.Play ();
 	}
 
 	public void Die()
 	{
 		hurt.Play ();
+		pain.text = " ";
 		screen.enabled = false;
 		healthBar.fillAmount = 0;
 		Destroy (gameObject);
+	}
+
+	IEnumerator DamageToScreen()
+	{
+		yield return new WaitForSeconds (3);
+		pain.text = " ";
 	}
 		
 }
