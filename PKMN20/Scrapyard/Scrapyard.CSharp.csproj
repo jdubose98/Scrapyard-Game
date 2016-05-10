@@ -69,6 +69,7 @@
   <ItemGroup>
     <Compile Include="Assets\CameraControl.cs" />
     <Compile Include="Assets\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
+    <Compile Include="Assets\RobotBuilder.cs" />
     <Compile Include="Assets\Scripts\DeadSimpleMoveScript.cs" />
     <Compile Include="Assets\Scripts\WorkshopCamRotate.cs" />
   </ItemGroup>
