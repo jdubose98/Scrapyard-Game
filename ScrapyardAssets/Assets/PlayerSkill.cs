@@ -10,12 +10,22 @@ public class PlayerSkill : MonoBehaviour {
 	[SerializeField] float m_Attack;
 	[SerializeField] float m_Defense;
 	[SerializeField] float m_Health;
+	[SerializeField] float m_BurnDuration;
+	[SerializeField] float m_StunDuration;
+
+	// public variables
 
 	public bool fight;
 	public Image chargeBar;
+	public EnemyAttack enemy;
+
+	// private variables
 
 	Image healthBar;
-	public EnemyAttack enemy;
+	EnemyEnable battle;
+	bool charge;
+
+	// Private methods
 
 	void Awake()
 	{
@@ -24,8 +34,9 @@ public class PlayerSkill : MonoBehaviour {
 		chargeBar = GameObject.Find ("PCharge").GetComponent<Image> ();
 		chargeBar.fillAmount = 0;
 		enemy = GameObject.Find ("Bot").GetComponent<EnemyAttack> ();
+		battle = enemy.GetComponent<EnemyEnable> ();
 		fight = false;
-
+		charge = true;
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -33,14 +44,22 @@ public class PlayerSkill : MonoBehaviour {
 		if (other.tag == "Enemy") 
 		{
 			enemy = other.gameObject.GetComponent<EnemyAttack> ();
+			Debug.Log (other.name);
 		}
 	}
 
 	void FixedUpdate()
 	{
-		if (enemy.screen.enabled) 
+		if (battle.screen.enabled) 
 		{
-			chargeBar.fillAmount += Mathf.Lerp (0, 1, m_Speed * Time.fixedDeltaTime);
+			if (charge) 
+			{
+				chargeBar.fillAmount += (m_Speed * Time.fixedDeltaTime);
+			}
+			else 
+			{
+				chargeBar.fillAmount += 0;
+			}
 
 			if (chargeBar.fillAmount == 1) 
 			{
@@ -53,42 +72,56 @@ public class PlayerSkill : MonoBehaviour {
 			CancelInvoke ();
 			enemy.Die ();
 		}
+
+		if (healthBar.fillAmount == 1) 
+		{
+			CameraFollow cam = GameObject.Find ("Main Camera").GetComponent<CameraFollow> ();
+			cam.enabled = false;
+			Destroy (gameObject);
+		}
 	}
+
+	void Attack()
+	{
+		enemy.TakeDamage (1.0f);
+	}
+
+	// Public methods
 
 	public void Attack(float mult)
 	{
 		enemy.TakeDamage (m_Attack * mult);
 	}
 
-	public void Attack()
-	{
-		enemy.TakeDamage (1.0f);
-	}
-
 	public void Burn()
 	{
-		if (enemy.healthBar.fillAmount < 0.5f) 
-		{
-			InvokeRepeating ("Attack", 1.0f, 2.0f);
-		}
+		InvokeRepeating ("Attack", 1.0f, 2.0f);
+		StartCoroutine (Extinguish ());
 	}
 
 	public void Stun()
 	{
-		StartCoroutine (Freeze (enemy.charge));
+		StartCoroutine (Freeze ());
 	}
-
+		
 	public void TakeDamage (float damage)
 	{
 		healthBar.fillAmount += ((damage - m_Defense) * (1/m_Health));
 	}
 
-	IEnumerator Freeze (bool which)
+	// IEnumerators
+
+	IEnumerator Extinguish()
 	{
-		Debug.Log ("frozen");
-		which = false;
-		yield return new WaitForSeconds (2);
-		which = false;
-		Debug.Log ("Unfrozen");
+		yield return new WaitForSeconds (m_BurnDuration);
+		CancelInvoke ();
 	}
+
+	IEnumerator Freeze ()
+	{
+		charge = false;
+		yield return new WaitForSeconds (m_StunDuration);
+		charge = true;
+	}
+
 }

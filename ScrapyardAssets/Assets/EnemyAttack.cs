@@ -10,16 +10,17 @@ public class EnemyAttack : MonoBehaviour {
 	[SerializeField] float m_Attack;
 	[SerializeField] float m_Defense;
 	[SerializeField] float m_Health;
+	[SerializeField] float m_BurnDuration;
+	[SerializeField] float m_StunDuration;
 
-	int burn;
+	float up;
 	public Image chargeBar;
 	Text pain;
 	public Image healthBar;
 	PlayerSkill player;
 	ParticleSystem hurt;
+	EnemyEnable self;
 	public bool charge = true;
-
-	public Canvas screen;
 
 	void Awake()
 	{
@@ -29,31 +30,50 @@ public class EnemyAttack : MonoBehaviour {
 		chargeBar.fillAmount = 0;
 		player = GameObject.Find ("Ethan").GetComponent<PlayerSkill> ();
 		hurt = GetComponent<ParticleSystem> ();
-		screen = GameObject.Find ("Canvas").GetComponent<Canvas>();
-		screen.enabled = false;
+		self = this.GetComponent<EnemyEnable> ();
 		pain = GameObject.Find ("Pain").GetComponent<Text> ();
-		// InvokeRepeating ("Attack", m_Speed, 1.0f);
-	}
+		charge = true;
+		up = this.m_Speed * Time.fixedDeltaTime;
 
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.tag == "Player") 
-		{
-			screen.enabled = true;
-		}
+		Debug.Log (Time.fixedDeltaTime);
+		Debug.Log (up);
+
 	}
 
 	void FixedUpdate()
 	{
-		if (screen.enabled && healthBar.fillAmount < 1) 
+		if (self.screen.enabled && healthBar.fillAmount < 1) 
 		{
 			if (charge) 
 			{
-				chargeBar.fillAmount += Mathf.Lerp (0, 1, m_Speed * Time.fixedDeltaTime);
+				chargeBar.fillAmount += up;
 			}
+			else 
+			{
+				chargeBar.fillAmount += 0;
+				Debug.Log (up);
+			}
+
 			if (chargeBar.fillAmount == 1) 
 			{
-				Attack ();
+				int move = (int) Random.Range (0, 3);
+
+				switch (move) {
+				case 0:
+					Attack ();
+					break;
+				case 1:
+					Burn();
+					chargeBar.fillAmount = 0;
+					break;
+				case 2:
+					player.Stun ();
+					chargeBar.fillAmount = 0;
+					break;
+				default:
+					Attack ();
+					break;
+				}
 			}
 		}
 	}
@@ -62,6 +82,17 @@ public class EnemyAttack : MonoBehaviour {
 	{
 		player.TakeDamage (m_Attack);
 		chargeBar.fillAmount = 0;
+	}
+
+	void BaseAttack()
+	{
+		player.TakeDamage (1.0f);
+	}
+
+	void Burn()
+	{
+		InvokeRepeating ("BaseAttack", 1.0f, 2.0f);
+		StartCoroutine (Extinguish ());
 	}
 
 	public void TakeDamage (float damage)
@@ -73,11 +104,16 @@ public class EnemyAttack : MonoBehaviour {
 //		hurt.Play ();
 	}
 
+	public void Stun()
+	{
+		StartCoroutine (Freeze ());
+	}
+
 	public void Die()
 	{
 		hurt.Play ();
 		pain.text = " ";
-		screen.enabled = false;
+		self.screen.enabled = false;
 		healthBar.fillAmount = 0;
 		Destroy (gameObject);
 	}
@@ -87,5 +123,17 @@ public class EnemyAttack : MonoBehaviour {
 		yield return new WaitForSeconds (3);
 		pain.text = " ";
 	}
+
+	IEnumerator Freeze ()
+	{
+		charge = false;
+		yield return new WaitForSeconds (m_StunDuration);
+		charge = true;
+	}
 		
+	IEnumerator Extinguish()
+	{
+		yield return new WaitForSeconds (m_BurnDuration);
+		CancelInvoke ();
+	}
 }

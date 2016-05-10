@@ -13,6 +13,10 @@ public class PlayerAttack : MonoBehaviour {
 	void Start()
 	{
 		player = GameObject.Find ("Ethan").GetComponent<PlayerSkill> ();
+	}
+
+	void FixedUpdate()
+	{
 		enemy = player.enemy;
 	}
 
@@ -76,7 +80,7 @@ public class PlayerAttack : MonoBehaviour {
 	{
 		if (player.fight) 
 		{
-			player.Stun ();
+			enemy.Stun ();
 			player.fight = false;
 			player.chargeBar.fillAmount = 0;
 		}
