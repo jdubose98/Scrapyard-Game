@@ -13,6 +13,10 @@ public class PlayerAttack : MonoBehaviour {
 	void Start()
 	{
 		player = GameObject.Find ("Ethan").GetComponent<PlayerSkill> ();
+	}
+
+	void FixedUpdate()
+	{
 		enemy = player.enemy;
 	}
 
@@ -48,13 +52,37 @@ public class PlayerAttack : MonoBehaviour {
 
 	public void Capture()
 	{
-		int seize = Random.Range (0, (int) (enemy.healthBar.fillAmount * 100));
-
-		Debug.Log (seize);
-
-		if (seize <= 10) 
+		if (player.fight) 
 		{
-			Debug.Log ("Captured");
+			int seize = Random.Range (0, (int)(enemy.healthBar.fillAmount * 100));
+
+			Debug.Log (seize);
+
+			if (seize >= 50) 
+			{
+				Debug.Log ("Captured");
+			}
+		}
+	}
+
+	public void SpecialB()
+	{
+		if (player.fight) 
+		{
+			player.Burn ();
+			player.fight = false;
+			player.chargeBar.fillAmount = 0;
+		}
+			
+	}
+
+	public void SpecialS()
+	{
+		if (player.fight) 
+		{
+			enemy.Stun ();
+			player.fight = false;
+			player.chargeBar.fillAmount = 0;
 		}
 	}
 }
