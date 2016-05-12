@@ -35,15 +35,12 @@ public class EnemyAttack : MonoBehaviour {
 		healthBar.fillAmount = 0;
 		chargeBar = GameObject.Find ("ECharge").GetComponent<Image> ();
 		chargeBar.fillAmount = 0;
-<<<<<<< HEAD:PKMN20/Scrapyard/Assets/EnemyAttack.cs
 		player = GameObject.Find ("Ethan").GetComponent<PlayerSkill> ();
 		hurt = GetComponent<ParticleSystem> ();
 		self = this.GetComponent<EnemyEnable> ();
 		pain = GameObject.Find ("Pain").GetComponent<Text> ();
-=======
 		player = GameObject.Find ("Controller").GetComponent<PlayerSkill> ();
 		self = gameObject.GetComponent<EnemyEnable> ();
->>>>>>> refs/remotes/jdubose98/master:PKMN20/Scrapyard/Assets/Scripts/EnemyAttack.cs
 		charge = true;
 		up = this.m_Speed * Time.fixedDeltaTime;
 
