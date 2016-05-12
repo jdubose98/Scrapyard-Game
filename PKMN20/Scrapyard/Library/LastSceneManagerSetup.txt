@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/blank0.unity
+=======
+- path: Assets/Scenes/TestScene.unity
+>>>>>>> refs/remotes/jdubose98/master
   isLoaded: 1
   isActive: 1

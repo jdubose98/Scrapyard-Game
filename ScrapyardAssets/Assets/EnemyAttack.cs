@@ -35,9 +35,9 @@ public class EnemyAttack : MonoBehaviour {
 		healthBar.fillAmount = 0;
 		chargeBar = GameObject.Find ("ECharge").GetComponent<Image> ();
 		chargeBar.fillAmount = 0;
-		player = GameObject.Find ("Ethan").GetComponent<PlayerSkill> ();
+		player = GameObject.Find ("Controller").GetComponent<PlayerSkill> ();
 		hurt = GetComponent<ParticleSystem> ();
-		self = this.GetComponent<EnemyEnable> ();
+		self = gameObject.GetComponent<EnemyEnable> ();
 		pain = GameObject.Find ("Pain").GetComponent<Text> ();
 		charge = true;
 		up = this.m_Speed * Time.fixedDeltaTime;
@@ -46,6 +46,8 @@ public class EnemyAttack : MonoBehaviour {
 
 	void FixedUpdate()
 	{
+
+        Debug.Log(self.screen.enabled);
 		if (self.screen.enabled && healthBar.fillAmount < 1) 
 		{
 			if (charge) 
