@@ -67,16 +67,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraFollow.cs" />
+    <Compile Include="Assets\EnemyAttack.cs" />
+    <Compile Include="Assets\EnemyEnable.cs" />
     <Compile Include="Assets\Lava_Flowing_Shader\Scripts\ScrollingUVs_Layers.cs" />
-    <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\PlayerAttack.cs" />
+    <Compile Include="Assets\PlayerSkill.cs" />
     <Compile Include="Assets\Scripts\DeadSimpleMoveScript.cs" />
-    <Compile Include="Assets\Scripts\EnemyAttack.cs" />
-    <Compile Include="Assets\Scripts\EnemyEnable.cs" />
-    <Compile Include="Assets\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\PlayerSkill.cs" />
     <Compile Include="Assets\Scripts\RobotBuilder.cs" />
     <Compile Include="Assets\Scripts\WorkshopCamRotate.cs" />
+    <Compile Include="Assets\ThirdPersonCharacter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Images\cloudy\readme.txt" />
