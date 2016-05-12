@@ -13,14 +13,21 @@ public class EnemyAttack : MonoBehaviour {
 	[SerializeField] float m_BurnDuration;
 	[SerializeField] float m_StunDuration;
 
-	float up;
+	// public variables
+
 	public Image chargeBar;
-	Text pain;
 	public Image healthBar;
+
+	// private variables
+
+	bool charge;
+	float up;
+	Text pain;
 	PlayerSkill player;
-	ParticleSystem hurt;
+	public ParticleSystem hurt;
 	EnemyEnable self;
-	public bool charge = true;
+
+	// private methods
 
 	void Awake()
 	{
@@ -28,20 +35,19 @@ public class EnemyAttack : MonoBehaviour {
 		healthBar.fillAmount = 0;
 		chargeBar = GameObject.Find ("ECharge").GetComponent<Image> ();
 		chargeBar.fillAmount = 0;
-		player = GameObject.Find ("Ethan").GetComponent<PlayerSkill> ();
+		player = GameObject.Find ("Controller").GetComponent<PlayerSkill> ();
 		hurt = GetComponent<ParticleSystem> ();
-		self = this.GetComponent<EnemyEnable> ();
+		self = gameObject.GetComponent<EnemyEnable> ();
 		pain = GameObject.Find ("Pain").GetComponent<Text> ();
 		charge = true;
 		up = this.m_Speed * Time.fixedDeltaTime;
-
-		Debug.Log (Time.fixedDeltaTime);
-		Debug.Log (up);
 
 	}
 
 	void FixedUpdate()
 	{
+
+        Debug.Log(self.screen.enabled);
 		if (self.screen.enabled && healthBar.fillAmount < 1) 
 		{
 			if (charge) 
@@ -51,7 +57,6 @@ public class EnemyAttack : MonoBehaviour {
 			else 
 			{
 				chargeBar.fillAmount += 0;
-				Debug.Log (up);
 			}
 
 			if (chargeBar.fillAmount == 1) 
@@ -95,6 +100,8 @@ public class EnemyAttack : MonoBehaviour {
 		StartCoroutine (Extinguish ());
 	}
 
+	// public methods
+
 	public void TakeDamage (float damage)
 	{
 		healthBar.fillAmount += ((damage - m_Defense) * (1/m_Health));
@@ -117,6 +124,8 @@ public class EnemyAttack : MonoBehaviour {
 		healthBar.fillAmount = 0;
 		Destroy (gameObject);
 	}
+
+	// IEnumerators
 
 	IEnumerator DamageToScreen()
 	{
