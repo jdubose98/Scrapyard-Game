@@ -16,8 +16,8 @@ public class PlayerAttack : MonoBehaviour {
 
 	void Start()
 	{
-		player = GameObject.Find ("Ethan").GetComponent<PlayerSkill> ();
-		reward = GameObject.Find ("Reward").GetComponent<Text>();
+		player = GameObject.FindWithTag ("Player").GetComponent<PlayerSkill> ();
+		//reward = GameObject.Find ("Reward").GetComponent<Text>();
 		caught = false;
 	}
 

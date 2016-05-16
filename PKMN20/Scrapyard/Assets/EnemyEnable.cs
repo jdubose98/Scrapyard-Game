@@ -9,7 +9,7 @@ public class EnemyEnable : MonoBehaviour {
 
 	void Awake()
 	{
-		screen = GameObject.Find ("Canvas").GetComponent<Canvas>();
+		screen = GameObject.Find ("Battle canvas").GetComponent<Canvas>();
 		screen.enabled = false;
 		self = this.GetComponent<EnemyAttack> ();
 		self.enabled = false;
